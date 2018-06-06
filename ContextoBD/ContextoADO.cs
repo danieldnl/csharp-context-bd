@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace ContextoBD
 {
-    class ContextoADO : IContextoBD, IDisposable
+    public class ContextoADO : IContextoBD, IDisposable
     {
         private readonly SqlConnection Conexao;
 

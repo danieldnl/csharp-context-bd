@@ -2,7 +2,7 @@
 
 namespace ContextoBD
 {
-    interface IContextoBD
+    public interface IContextoBD
     {
         SqlTransaction BeginTransaction();
         int ExecutaComando(string strQuery, SqlCommand com = null, bool retornarId = false);
