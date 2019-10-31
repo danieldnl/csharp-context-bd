@@ -45,8 +45,16 @@ namespace ContextoBD
 
         public virtual SqlDataReader ExecutaComandoComRetorno(string strQuery, SqlCommand com = null)
         {
-            var cmdComando = new SqlCommand(strQuery, Conexao);
-            return cmdComando.ExecuteReader();
+            if (com == null)
+            {
+                com = new SqlCommand();
+            }
+
+            com.CommandText = strQuery;
+            com.CommandType = CommandType.Text;
+            com.Connection = Conexao;
+
+            return com.ExecuteReader();
         }
 
         public void Dispose()
