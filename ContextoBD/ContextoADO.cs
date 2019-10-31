@@ -11,7 +11,7 @@ namespace ContextoBD
 
         public ContextoADO(string nome)
         {
-            Conexao = new SqlConnection(ConfigurationManager.ConnectionStrings[nome].ConnectionString);
+            Conexao = new SqlConnection(nome);
             Conexao.Open();
         }
 
